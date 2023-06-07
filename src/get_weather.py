@@ -1,4 +1,4 @@
-from urllib import parse, request
+from urllib import parse, request, error
 import json
 from . import api_key_parser # This is a relative import
 
@@ -24,6 +24,7 @@ def get_weather(location, metric=True):
     try:
         with request.urlopen(query_url) as response: # Get the response from the URL
             data = response.read()
+            
     except error.HTTPError as e:
         if(e.code == 400):
             print('400 Bad Request.')
