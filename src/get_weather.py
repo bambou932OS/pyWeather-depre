@@ -18,7 +18,36 @@ def build_url(location, metric=True):
     
     return url
 
-def get_weather(location, metric=True):
+def get_weather(locations, metric=True):
+    #location은 '/'을 기준으로 나누어야 한다.
+    location_list = [[]]
+
+    index = 0
+    for location in locations:
+        location = ''.join(location) # location is a list of strings, so we need to join them together
+        
+        if('/' in location):
+            location_split = location.split("/")
+            if(location == '/'): # '/'만 입력했을 때
+                location_list.append([])
+                index += 1
+
+            elif(len(location_split) == 2): # '/'기준으로 뒤에 아무것도 없을 때
+                location_list[index].append(location_split[0])
+                location_list.append([])
+                index += 1
+
+            elif(len(location_split) == 3): # '/'기준으로 뒤에 문자열이 있을 때
+                location_list[index].append(location_split[0])
+                location_list.append([])
+                index += 1
+                location_list[index].append(location_split[2])
+                
+        else:
+            location_list[index].append(location)
+
+    print(location_list)
+
     query_url = build_url(location, metric)
 
     with request.urlopen(query_url) as response: # Get the response from the URL

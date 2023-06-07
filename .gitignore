@@ -1,3 +1,4 @@
 # .gitignore
 
 api_key.ini
+src/__pycache__
