@@ -2,10 +2,9 @@ import sys
 import argparse
 
 def parse_method(parse_str :str):
-    print(parse_str)
-    return parse_str.split(',')
+    return parse_str.split()
 
-def get_args():
+def get_args(): # Get the command-line arguments
     parser = argparse.ArgumentParser(description='Get the weather forecast for a given location.')
 
     parser.add_argument('location', metavar='location', type= parse_method, nargs='+', help='The location to get the weather forecast.')
@@ -15,4 +14,4 @@ def get_args():
     parser.add_argument('-f', '-i', '--imperial', dest='metric', action='store_false', help='Use imperial units instead of metric.')
 
     parser.set_defaults(metric=True)
-    return parser.parse_args()
+    return parser.parse_args() # Return the parsed arguments

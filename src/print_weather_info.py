@@ -2,7 +2,7 @@
 import pprint
 
 def print_weather_info(weather_data, metric=True):
-    pprint.pprint(weather_data)
+    #pprint.pprint(weather_data)
 
     print(
         f'The weather in {weather_data["name"]}({weather_data["sys"]["country"]}) '

@@ -1,6 +1,6 @@
 # PyWeather - CLI Weather Application
 
-Did you ever want to know the weather of your city without opening your browser? 
+Have you ever wanted to know the weather of your city without opening your browser? 
 
 This is the solution for you.
 
@@ -52,6 +52,19 @@ and you will get the following output:
 
 ```
 The weather in New York(US) is 69.04°F, Haze
+```
+
+You can also enter multi city names distinct by '/' (you can add space between '/' if you want).
+
+```bash
+python pyWeather.py New York/Seoul
+```
+
+and you will get the following output:
+
+```
+The weather in New York(US) is 17.59°C, Haze
+The weather in Seoul(KR) is 23.93°C, Few clouds
 ```
 
 You can also use the application with arguments:
