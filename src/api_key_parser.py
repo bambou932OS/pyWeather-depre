@@ -16,7 +16,7 @@ def get_api_key():
         result = config['openweathermap']['api_key']
     except:
         print('Failed to parse api_key.ini file.')
-        print('Check if the file exists and is in the correct format.')
+        print('Please Enter Valid API Key.')
         raise SystemExit
     
     return result

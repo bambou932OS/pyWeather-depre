@@ -28,16 +28,30 @@ After cloning the repository, you can use the application by running the followi
 python pyWeather.py <city name>
 ```
 
-For example:
+To use pyWeather, you need to have an API key from [OpenWeatherMap](https://openweathermap.org/).
+
+On first use, the application will ask you to enter your API key.
+
+```
+Failed to parse api_key.ini file.
+Please Enter Valid API Key.
+Enter your API key:
+```
+
+When you enter your API key, the application will save it automatically in file *api_key.txt*.
+
+You can use the application by executing pyWeather.py with the city name as an argument.
+
+For example, if you want to know the weather in Paris, you can run the following command:
 
 ```bash
-python pyWeather.py Paris
+python pyWeather.py New York
 ```
 
 and you will get the following output:
 
 ```
-The weather in Paris(FR) is 22.58°C.
+The weather in New York(US) is 69.04°F, Haze
 ```
 
 You can also use the application with arguments:
