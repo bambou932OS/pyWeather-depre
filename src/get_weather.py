@@ -46,11 +46,12 @@ def get_weather(locations, metric=True):
         else:
             location_list[index].append(location)
 
-    print(location_list)
+    data = []
 
-    query_url = build_url(location, metric)
+    for location in location_list:
+        query_url = build_url(location, metric)
 
-    with request.urlopen(query_url) as response: # Get the response from the URL
-        data = response.read()
+        with request.urlopen(query_url) as response: # Get the response from the URL
+            data.append(json.loads(response.read()))
 
-    return json.loads(data) # Convert the response to a Python dict
+    return data # Convert the response to a Python dict
